@@ -11,9 +11,11 @@ import {AuthService} from "./Services/auth.service";
 import {AuthGuard} from "./Services/auth.guard";
 import { ListeComponent } from './produit/liste/liste.component';
 import { ProduitComponent } from './produit/produit.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ProduitService} from "./Services/produit.service";
 
 const appRoutes: Routes = [
-  {path: 'liste', canActivate: [AuthGuard], component: ProduitComponent},
+  {path: 'produits', canActivate: [AuthGuard], component: ProduitComponent},
   {path: '', component: ConnexionComponent},
 ];
 
@@ -30,11 +32,13 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    ProduitService
   ],
   bootstrap: [AppComponent]
 })

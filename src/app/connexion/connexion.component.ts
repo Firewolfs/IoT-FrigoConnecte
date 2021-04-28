@@ -33,7 +33,7 @@ export class ConnexionComponent implements OnInit {
     let auth = this.authService.login(formValue.login, formValue.password);
 
     if (auth) {
-      this.route.navigate(['liste']);
+      this.route.navigate(['produits']);
     } else { this.erreur = true; }
   }
 
