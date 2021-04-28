@@ -6,5 +6,5 @@
          aria-describedby="search-addon" [(ngModel)]="name" (input)="onSearchProduct()" />
 </div>
 <ul class="list-group">
-  <app-liste *ngFor="let item of produits" [nom]="item.nom" [quantite]="item.quantite"></app-liste>
+  <app-liste *ngFor="let item of produits" [id]="item.id" [nom]="item.nom" [quantite]="item.quantite"></app-liste>
 </ul>

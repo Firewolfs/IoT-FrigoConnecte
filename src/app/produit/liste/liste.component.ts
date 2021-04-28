@@ -8,6 +8,7 @@ import {ProduitService} from "../../Services/produit.service";
 })
 export class ListeComponent implements OnInit {
 
+  @Input() id: number;
   @Input() nom: string;
   @Input() quantite: number;
 
@@ -16,6 +17,10 @@ export class ListeComponent implements OnInit {
   constructor(private produitService: ProduitService) { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(id: number) {
+    this.produitService.deleteProduct(this.id);
   }
 
 }

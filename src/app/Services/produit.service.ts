@@ -12,10 +12,10 @@ export class ProduitService {
 
   // Temporaire
   private produits = [
-    {nom: 'Fromage', quantite: 1},
-    {nom: 'yaourt au chocolat', quantite: 5},
-    {nom: 'Paquet de jambon', quantite: 2},
-    {nom: 'Paquet de saucisson', quantite: 2},
+    {id: 1, nom: 'Fromage', quantite: 1},
+    {id: 2, nom: 'yaourt au chocolat', quantite: 5},
+    {id: 3, nom: 'Paquet de jambon', quantite: 2},
+    {id: 4, nom: 'Paquet de saucisson', quantite: 2},
   ];
 
   constructor() { }
@@ -27,7 +27,14 @@ export class ProduitService {
   }
 
   searchProduct(name: string) {
+    // TODO : Remplacer par appel à l'API
     this.liste = this.produits.filter(p => p.nom.includes(name));
+    this.emitProduitSubject();
+  }
+
+  deleteProduct(id: number) {
+    // TODO : Remplacer par appel à l'API
+    this.liste = this.produits.filter(p => p.id !== id);
     this.emitProduitSubject();
   }
 
