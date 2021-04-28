@@ -2,13 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { MdbModule } from 'mdb-angular-ui-kit';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {RouterModule, Routes} from "@angular/router";
+import { ConnexionComponent } from './connexion/connexion.component';
+
+const appRoutes: Routes = [
+
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConnexionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MdbModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
