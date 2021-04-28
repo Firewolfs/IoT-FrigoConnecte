@@ -6,7 +6,7 @@ import { MdbModule } from 'mdb-angular-ui-kit';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from "@angular/router";
 import { ConnexionComponent } from './connexion/connexion.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./Services/auth.service";
 import {AuthGuard} from "./Services/auth.guard";
 import { ListeComponent } from './produit/liste/liste.component';
@@ -29,7 +29,8 @@ const appRoutes: Routes = [
     MdbModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     AuthService,

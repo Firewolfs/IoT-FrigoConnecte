@@ -1,10 +1,10 @@
 <h2 style="margin-top: 10%;">{{title}}</h2>
-<br><br>
-<!--<div class="form-inline d-flex justify-content-center md-form form-sm mt-0">-->
-<!--  <i class="fas fa-search" aria-hidden="true"></i>-->
-<!--  <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Rechercher un médecin"-->
-<!--         aria-label="Search" [(ngModel)]="name" (input)="onSearchMedecin()">-->
-<!--</div>-->
+<br>
+<div class="input-group mb-4">
+  <span class="input-group-text border-0" id="search-addon"><i class="fas fa-search"></i></span>
+  <input type="search" class="form-control form-control-lg rounded" placeholder="Rechercher un produit" aria-label="Search"
+         aria-describedby="search-addon" [(ngModel)]="name" (input)="onSearchProduct()" />
+</div>
 <ul class="list-group">
   <app-liste *ngFor="let item of produits" [nom]="item.nom" [quantite]="item.quantite"></app-liste>
 </ul>
