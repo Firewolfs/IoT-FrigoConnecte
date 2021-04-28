@@ -9,10 +9,11 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./Services/auth.service";
 import {AuthGuard} from "./Services/auth.guard";
-import { ListeComponent } from './liste/liste.component';
+import { ListeComponent } from './produit/liste/liste.component';
+import { ProduitComponent } from './produit/produit.component';
 
 const appRoutes: Routes = [
-  {path: 'liste', canActivate: [AuthGuard], component: ListeComponent},
+  {path: 'liste', canActivate: [AuthGuard], component: ProduitComponent},
   {path: '', component: ConnexionComponent},
 ];
 
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ConnexionComponent,
-    ListeComponent
+    ListeComponent,
+    ProduitComponent
   ],
   imports: [
     BrowserModule,
