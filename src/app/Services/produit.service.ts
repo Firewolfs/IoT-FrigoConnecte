@@ -28,7 +28,7 @@ export class ProduitService {
 
   searchProduct(name: string) {
     // TODO : Remplacer par appel à l'API
-    this.liste = this.produits.filter(p => p.nom.includes(name));
+    this.liste = this.produits.filter(p => p.nom.toLowerCase().includes(name.toLowerCase()));
     this.emitProduitSubject();
   }
 
